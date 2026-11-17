@@ -1,0 +1,38 @@
+# WorkBuddy Expert Package .gitignore
+
+# Ignore all files in .codebuddy-plugin/ except plugin.json
+.codebuddy-plugin/*
+!.codebuddy-plugin/plugin.json
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore large generated images (optional, but avatars are required)
+# *.png
+# *.jpg
+# *.jpeg
+
+# Ignore local development files
+.env
+.local
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Allow avatars (they are required for the expert)
+!avatars/
+!avatars/*.png
+!avatars/*.jpg
+!avatars/*.jpeg
+
+# Allow all other files
+# No blanket ignore - we want full source control

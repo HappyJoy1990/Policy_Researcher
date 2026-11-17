@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "issuing_body", "effect_level", "region_scope", "applicability", "status", "publish_date", "effective_date", "relevance", "segment_tags", "pestel_dimension", "certainty_tier", "source_url", "evidence_quote"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "issuing_body": { "type": "string" },
+    "effect_level": { "enum": ["法律", "行政法规", "部门规章", "部门规范性文件", "地方性法规", "地方政府规章", "地方规范性文件", "国家标准", "行业标准", "规划纲要", "征求意见稿"] },
+    "region_scope": { "enum": ["national", "regional"] },
+    "applicability": { "enum": ["直接适用", "间接参考", "不适用"] },
+    "status": { "enum": ["已生效", "已发布未生效", "征求意见稿", "规划意向（非强制）"] },
+    "publish_date": { "type": ["string", "null"] },
+    "effective_date": { "type": ["string", "null"] },
+    "relevance": { "enum": ["高", "中", "低"] },
+    "segment_tags": { "type": "array" },
+    "pestel_dimension": { "type": "array", "minItems": 1 },
+    "certainty_tier": { "enum": ["高", "中", "低"] },
+    "source_url": { "type": "string", "format": "uri" },
+    "evidence_quote": { "type": "string" },
+    "source_region": { "type": "string" },
+    "group": { "enum": ["A", "B"] },
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "supersedes": { "type": "array", "items": { "type": "string" } },
+        "superseded_by": { "type": ["string", "null"] },
+        "change_note": { "type": "string" },
+        "continuity_signal": { "type": "string" },
+        "source_urls": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "quantitative_anchors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["anchor", "value", "quote", "policy_id", "source_url"],
+        "properties": {
+          "anchor": { "type": "string" },
+          "value": { "type": "string" },
+          "unit": { "type": "string" },
+          "quote": { "type": "string" },
+          "policy_id": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}

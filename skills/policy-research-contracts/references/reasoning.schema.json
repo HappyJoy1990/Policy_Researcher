@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reasoning",
+  "type": "object",
+  "required": ["logic_chains", "pestel_positioning", "multiple_streams", "scenarios", "key_uncertainties"],
+  "properties": {
+    "logic_chains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["policy_id", "layers"],
+        "properties": {
+          "policy_id": { "type": "string" },
+          "layers": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "required": ["level", "name", "statement", "transmission_variable", "confidence"],
+              "properties": {
+                "level": { "enum": ["L1", "L2", "L3", "L4", "L5", "L6"] },
+                "name": { "enum": ["clause_ref", "direct_subject", "structural_shift", "value_chain_node", "firm_level_impact", "strategic_outcome"] },
+                "statement": { "type": "string" },
+                "transmission_variable": { "type": "string" },
+                "confidence": { "enum": ["高", "中", "低"] },
+                "uncertainty_source": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "pestel_positioning": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dimension": { "type": "string" },
+          "statement": { "type": "string" },
+          "historical_stability": { "type": "string" },
+          "policy_ids": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "multiple_streams": {
+      "type": "object",
+      "properties": {
+        "problem_stream": { "type": "string" },
+        "policy_stream": { "type": "string" },
+        "politics_stream": { "type": "string" },
+        "primary_region_context": { "type": "string" }
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["name", "triggers"],
+        "properties": {
+          "name": { "enum": ["乐观", "基准", "悲观"] },
+          "assumptions": { "type": "string" },
+          "triggers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["condition", "policy_ids", "evidence_group"],
+              "properties": {
+                "condition": { "type": "string" },
+                "policy_ids": { "type": "array", "items": { "type": "string" } },
+                "evidence_group": { "enum": ["A", "B"] }
+              }
+            }
+          },
+          "expected_outcome": { "type": "string" }
+        }
+      }
+    },
+    "quantitative_impact": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["metric", "formula", "baseline", "unit", "anchor_policy_ids", "assumption_flag"],
+        "properties": {
+          "metric": { "type": "string" },
+          "formula": { "type": "string" },
+          "baseline": { "type": "string" },
+          "unit": { "type": "string" },
+          "optimistic": { "type": "string" },
+          "base": { "type": "string" },
+          "pessimistic": { "type": "string" },
+          "anchor_policy_ids": { "type": "array", "items": { "type": "string" } },
+          "assumption_flag": { "type": "boolean" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "sensitivity": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "metric": { "type": "string" },
+          "variable": { "type": "string" },
+          "range": { "type": "string" },
+          "effect": { "type": "string" }
+        }
+      }
+    },
+    "key_uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "statement": { "type": "string" },
+          "resolvable_by_primary_region_files": { "type": "boolean" },
+          "evidence_needed": { "type": "string" }
+        }
+      }
+    },
+    "status": { "enum": ["OK", "REJECTED"] },
+    "rejection_reasons": { "type": "array", "items": { "type": "string" } }
+  }
+}

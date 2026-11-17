@@ -1,0 +1,28 @@
+{
+  "_NOTE": "结构骨架示例，所有值均为占位符，禁止作为事实使用。真实数据必须由各阶段成员联网核实后填充。",
+  "meta": {
+    "regions": { "primary": "__FILL__", "additional": [] },
+    "handoff_message": "H5 报告已由 policy-report-h5 渲染器生成，可直接在右侧结果区预览。",
+    "input_type": "company",
+    "time_window": { "start": "__FILL__", "end": "__FILL__", "rationale": "__FILL__" },
+    "generated_at": "__FILL_ISO8601__",
+    "research_profile": { "workflow": "W1", "segments": ["S1"], "searched_official_platforms": [] }
+  },
+  "scope": { "_REF": "scope.schema.json" },
+  "policies": {
+    "_REF": "policy.schema.json",
+    "A": [],
+    "B": [],
+    "official_platforms_attempted": [],
+    "regional_gap_statement": ""
+  },
+  "opportunities_risks": { "_REF": "opportunity_risk.schema.json", "items": [], "action_items": [], "coverage": {} },
+  "reasoning": { "_REF": "reasoning.schema.json", "logic_chains": [], "pestel_positioning": [], "multiple_streams": {}, "scenarios": [], "quantitative_impact": [], "sensitivity": [], "key_uncertainties": [] },
+  "validation": { "valid": false, "errors": [], "checked_at": "__FILL_ISO8601__", "checks": {} },
+  "policy_evolution": [],
+  "regional_comparison": [],
+  "quantitative_impact": [],
+  "action_items": [],
+  "research_summary": { "headline": "", "a_group_findings": [], "b_group_trends": [], "assumptions": [] },
+  "limitations": []
+}

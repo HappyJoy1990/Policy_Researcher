@@ -1,0 +1,110 @@
+{
+  "name": "policy-research",
+  "version": "2.0.0",
+  "description": "A multi-agent policy research team that verifies entities, maps official national and regional policies, traces policy evolution, quantifies impact and delivers structured H5-ready reports.",
+  "author": {
+    "name": "WorkBuddy User"
+  },
+  "agents": [
+    "./agents/policy-research-team-lead.md",
+    "./agents/scope-metrics-analyst.md",
+    "./agents/policy-evidence-scanner.md",
+    "./agents/impact-action-analyst.md",
+    "./agents/logic-scenario-analyst.md",
+    "./agents/report-contract-validator.md"
+  ],
+  "skills": ["./skills/policy-research-contracts", "./skills/policy-report-h5"],
+
+  "expertType": "team",
+  "agentName": "policy-research-team-lead",
+  "teamInfo": {
+    "leadAgent": "policy-research-team-lead",
+    "memberAgents": [
+      "scope-metrics-analyst",
+      "policy-evidence-scanner",
+      "impact-action-analyst",
+      "logic-scenario-analyst",
+      "report-contract-validator"
+    ]
+  },
+
+  "displayName": {
+    "en": "Policy Research Think Tank",
+    "zh": "政研智库团"
+  },
+  "profession": {
+    "en": "Policy Research Think Tank",
+    "zh": "政研智库团"
+  },
+  "displayDescription": {
+    "en": "Verify entities and industry segments, search official national and primary-region policies, trace policy evolution, quantify impact, run six-layer reasoning and deliver actionable, contract-validated research reports.",
+    "zh": "核验企业主体与细分赛道，双轨检索全国及主区域官方政策，做沿革对比、量化测算、六层推演与落地清单"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "12-IndustryConsultant",
+  "defaultInitPrompt": {
+    "zh": "帮我研究【公司或行业】适用的全国与主区域政策，输出完整政策研究报告",
+    "en": "Research the national and primary-region policies applicable to [company or industry] and deliver a full policy research report"
+  },
+  "plugin": "policy-research",
+  "tags": [
+    { "en": "Policy Research", "zh": "政策研究" },
+    { "en": "Industry & Regional Analysis", "zh": "产业区域研判" },
+    { "en": "Impact Assessment & Action", "zh": "影响评估与落地" }
+  ],
+  "quickPrompts": [
+    { "en": "Research the national and primary-region policies applicable to [company or industry] and deliver a full policy research report", "zh": "帮我研究【公司或行业】适用的全国与主区域政策，输出完整政策研究报告" },
+    { "en": "Trace the five-year evolution and version changes of [policy or sector] and compare regions side by side", "zh": "梳理【某政策/某赛道】近五年的政策沿革与版本变化，并做区域横向对比" },
+    { "en": "Quantify the impact of [policy] on our company and give eligibility, deadlines and an action checklist", "zh": "量化评估【某政策】对我司的影响，给出申报条件、时间节点与落地行动清单" }
+  ],
+  "members": [
+    {
+      "id": "policy-research-team-lead",
+      "name": { "en": "Tan", "zh": "谭策衡" },
+      "displayName": { "en": "Tan", "zh": "谭策衡" },
+      "profession": { "en": "Chief Policy Research Officer", "zh": "首席政策研究官" },
+      "avatar": "avatars/policy-research-team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "scope-metrics-analyst",
+      "name": { "en": "Xie", "zh": "解界明" },
+      "displayName": { "en": "Xie", "zh": "解界明" },
+      "profession": { "en": "Research Scope & Metrics Analyst", "zh": "研究范围与口径官" },
+      "avatar": "avatars/scope-metrics-analyst.png",
+      "role": "member"
+    },
+    {
+      "id": "policy-evidence-scanner",
+      "name": { "en": "Zha", "zh": "查文渊" },
+      "displayName": { "en": "Zha", "zh": "查文渊" },
+      "profession": { "en": "Policy Evidence & Evolution Researcher", "zh": "政策证据与沿革研究员" },
+      "avatar": "avatars/policy-evidence-scanner.png",
+      "role": "member"
+    },
+    {
+      "id": "impact-action-analyst",
+      "name": { "en": "Shi", "zh": "施可行" },
+      "displayName": { "en": "Shi", "zh": "施可行" },
+      "profession": { "en": "Opportunity, Risk & Action Advisor", "zh": "机会风险与落地顾问" },
+      "avatar": "avatars/impact-action-analyst.png",
+      "role": "member"
+    },
+    {
+      "id": "logic-scenario-analyst",
+      "name": { "en": "Qin", "zh": "秦溯因" },
+      "displayName": { "en": "Qin", "zh": "秦溯因" },
+      "profession": { "en": "Policy Logic & Scenario Analyst", "zh": "政策逻辑与情景推演官" },
+      "avatar": "avatars/logic-scenario-analyst.png",
+      "role": "member"
+    },
+    {
+      "id": "report-contract-validator",
+      "name": { "en": "Qi", "zh": "祁核真" },
+      "displayName": { "en": "Qi", "zh": "祁核真" },
+      "profession": { "en": "Report Contract Auditor", "zh": "报告契约审校官" },
+      "avatar": "avatars/report-contract-validator.png",
+      "role": "member"
+    }
+  ]
+}

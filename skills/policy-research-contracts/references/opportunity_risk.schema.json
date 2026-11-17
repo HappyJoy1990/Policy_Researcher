@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpportunityRisk",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "statement", "region_applicability", "segment_tags", "evidence_policy_ids", "confidence", "uncertainty"],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "enum": ["机会", "风险"] },
+          "statement": { "type": "string" },
+          "region_applicability": { "type": "string" },
+          "segment_tags": { "type": "array" },
+          "evidence_policy_ids": { "type": "array", "items": { "type": "string" } },
+          "confidence": { "enum": ["高", "中", "低"] },
+          "uncertainty": { "type": "string" },
+          "b_group_note": { "type": "string" }
+        }
+      }
+    },
+    "action_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "related_policy_ids", "action", "eligibility", "required_documents", "responsible_body", "window", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "related_policy_ids": { "type": "array", "items": { "type": "string" } },
+          "opportunity_id": { "type": "string" },
+          "action": { "type": "string" },
+          "eligibility": { "type": "array", "items": { "type": "string" } },
+          "required_documents": { "type": "array", "items": { "type": "string" } },
+          "responsible_body": { "type": "string" },
+          "window": {
+            "type": "object",
+            "properties": {
+              "open": { "type": "string" },
+              "deadline": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          },
+          "status": { "enum": ["可立即启动", "待条件成熟", "待核实"] },
+          "prerequisites": { "type": "array", "items": { "type": "string" } },
+          "source_url": { "type": "string" }
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "segments_total": { "type": "integer" },
+        "segments_covered": { "type": "integer" },
+        "ratio": { "type": "number" },
+        "b_group_citation_ratio": { "type": "number" }
+      }
+    },
+    "status": { "enum": ["OK", "REJECTED"] },
+    "rejection_reasons": { "type": "array", "items": { "type": "string" } }
+  }
+}

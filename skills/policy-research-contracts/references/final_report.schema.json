@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Final Policy Research Report",
+  "type": "object",
+  "required": ["meta", "scope", "policies", "opportunities_risks", "reasoning", "validation"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["regions", "handoff_message"],
+      "properties": {
+        "regions": {
+          "type": "object",
+          "required": ["primary"],
+          "properties": {
+            "primary": { "type": "string" },
+            "additional": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "handoff_message": { "type": "string" },
+        "input_type": { "enum": ["company", "industry"] },
+        "time_window": { "type": "object" },
+        "generated_at": { "type": "string" },
+        "research_profile": { "type": "object" }
+      }
+    },
+    "scope": { "type": "object" },
+    "policies": { "type": "object" },
+    "opportunities_risks": { "type": "object" },
+    "reasoning": { "type": "object" },
+    "validation": {
+      "type": "object",
+      "required": ["valid", "errors"],
+      "properties": {
+        "valid": { "type": "boolean" },
+        "errors": { "type": "array" },
+        "checked_at": { "type": "string" },
+        "checks": { "type": "object" }
+      }
+    },
+    "policy_evolution": { "type": "array" },
+    "regional_comparison": { "type": "array" },
+    "quantitative_impact": { "type": "array" },
+    "action_items": { "type": "array" },
+    "research_summary": { "type": "object" },
+    "limitations": { "type": "array", "items": { "type": "string" } }
+  }
+}
