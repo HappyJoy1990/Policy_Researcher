@@ -1,6 +1,6 @@
 {
   "name": "policy-research",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A multi-agent policy research team that verifies entities, maps official national and regional policies, traces policy evolution, quantifies impact and delivers structured H5-ready reports.",
   "author": {
     "name": "WorkBuddy User"
