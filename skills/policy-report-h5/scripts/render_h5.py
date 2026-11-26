@@ -1414,7 +1414,7 @@ def render_legacy(final, out_path):
     H.append('</div></div>')
     if demo:
         H.append('<div class="demo-banner">演示模式：本报告为内置样例数据，仅用于预览 H5 界面与报告样式，'
-                 '<b>并非针对本次输入实时生成的政策结论</b>。填入 LLM API Key 并关闭演示模式即可实时生成。</div>')
+                 '<b>并非针对本次输入实时生成的政策结论</b>。正式报告由服务端已配置的大模型流水线经契约校验后生成。</div>')
 
     H.append('<div class="legend"><span><i style="background:#1f4e79"></i><b>已核实事实</b></span>'
              '<span><i style="background:#0f766e"></i><b>A 组判断</b></span>'
